@@ -1,13 +1,9 @@
+
 import { Outlet, NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 const nav = [
-  { href: '/how-it-works', label: 'How it works' },
-  { href: '/download', label: 'Download' },
-  { href: '/docs', label: 'Docs' },
-  { href: '/pricing', label: 'Pricing' },
-  { href: '/roadmap', label: 'Roadmap' },
-  { href: '/press-kit', label: 'Press Kit' },
+  { href: 'https://discord.gg/NMM9KRXgHU', label: 'Discord', external: true },
 ]
 
 export default function AppShell() {
@@ -19,21 +15,38 @@ export default function AppShell() {
             <img src="/logo1.svg" alt="RogueGrid9" className="h-7 w-auto" />
             <span className="font-extrabold tracking-tight text-lg">RogueGrid9</span>
           </a>
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="flex items-center gap-6">
             {nav.map((n) => (
-              <NavLink
-                key={n.href}
-                to={n.href}
-                className={({isActive}) => 
-                  'text-sm no-underline hover:opacity-100 opacity-90 ' + (isActive ? 'text-accent' : 'text-white/80')
-                }
-              >
-                {n.label}
-              </NavLink>
+              n.external ? (
+                <a
+                  key={n.href}
+                  href={n.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm no-underline hover:opacity-100 opacity-90 text-white/80 hover:text-[#5865F2]"
+                >
+                  {n.label}
+                </a>
+              ) : (
+                <NavLink
+                  key={n.href}
+                  to={n.href}
+                  className={({isActive}) => 
+                    'text-sm no-underline hover:opacity-100 opacity-90 ' + (isActive ? 'text-accent' : 'text-white/80')
+                  }
+                >
+                  {n.label}
+                </NavLink>
+              )
             ))}
           </nav>
-          <a href="/download" className="text-sm font-semibold px-3 py-1.5 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/10 shadow-soft">
-            Download Alpha
+          <a 
+            href="https://discord.gg/NMM9KRXgHU"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-semibold px-3 py-1.5 rounded-2xl bg-[#5865F2]/20 hover:bg-[#5865F2]/30 border border-[#5865F2]/40 shadow-soft"
+          >
+            Join Beta
           </a>
         </div>
       </header>
@@ -53,14 +66,19 @@ export default function AppShell() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-sm text-white/70">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="flex items-center gap-3">
-              <img src="/logo1.svg" className="h-6" />
+              <img src="/logo1.svg" className="h-6" alt="RogueGrid9" />
               <span>© {new Date().getFullYear()} RogueGrid9</span>
             </div>
             <div className="flex gap-4">
-              <a className="hover:text-white/100" href="/docs">Docs</a>
-              <a className="hover:text-white/100" href="/roadmap">Roadmap</a>
-              <a className="hover:text-white/100" href="/press-kit">Press Kit</a>
-              <a className="hover:text-white/100" href="/pricing">Pricing</a>
+              <a 
+                className="hover:text-white/100" 
+                href="https://discord.gg/NMM9KRXgHU"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Discord
+              </a>
+              <a className="hover:text-white/100" href="mailto:hello@roguegrid9.com">Contact</a>
             </div>
           </div>
         </div>

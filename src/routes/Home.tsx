@@ -22,8 +22,7 @@ export default function Home() {
               Collaborative Computing, Reimagined
             </h1>
             <p className="text-white/70 mt-4 text-lg">
-              Share processes peer-to-peer with your team. Direct connections are free. 
-              When you need a relay, it's just $5 per 100GB.
+              Share processes peer-to-peer with your team. Direct connections are free.
             </p>
             <div className="mt-8 flex gap-3">
               <a
@@ -66,7 +65,7 @@ export default function Home() {
           </Card>
           <Card title="Relay Servers (When Needed)">
             <div className="space-y-3">
-              <p className="text-white/70">~30% need relay servers:</p>
+              <p className="text-white/70">~30% need relay servers — more secure:</p>
               <ul className="text-white/60 text-sm space-y-2">
                 <li>• Restrictive corporate firewalls</li>
                 <li>• Complex network topologies</li>
@@ -88,6 +87,16 @@ export default function Home() {
         subtitle="Honest estimates based on typical usage patterns"
       >
         <div className="grid md:grid-cols-3 gap-6">
+          <Card title="Most Users">
+            <div className="space-y-2">
+              <p className="text-white/70 text-sm">P2P works, minimal relay usage</p>
+              <div className="py-4">
+                <p className="text-2xl font-bold text-accent">$0-2</p>
+                <p className="text-white/50 text-xs">per month</p>
+              </div>
+              <p className="text-white/60 text-xs">~0-5GB relay bandwidth</p>
+            </div>
+          </Card>
           <Card title="Small Dev Team">
             <div className="space-y-2">
               <p className="text-white/70 text-sm">3-5 developers sharing terminals</p>
@@ -108,73 +117,61 @@ export default function Home() {
               <p className="text-white/60 text-xs">~15-20GB relay bandwidth</p>
             </div>
           </Card>
-          <Card title="Most Users">
-            <div className="space-y-2">
-              <p className="text-white/70 text-sm">P2P works, minimal relay usage</p>
-              <div className="py-4">
-                <p className="text-2xl font-bold text-accent">$0-2</p>
-                <p className="text-white/50 text-xs">per month</p>
-              </div>
-              <p className="text-white/60 text-xs">~0-5GB relay bandwidth</p>
-            </div>
-          </Card>
         </div>
       </Section>
 
       {/* Comparison */}
-      <Section 
-        eyebrow="Cost Comparison" 
-        title="Save 80-90% vs Traditional Hosting"
+      <Section
+        eyebrow="Cost Comparison"
+        title="RogueGrid9 vs. Alternatives"
       >
-        <div className="grid md:grid-cols-2 gap-6">
-          <Card title="Traditional Stack">
-            <div className="space-y-3 text-sm">
-              <div className="flex justify-between">
-                <span className="text-white/70">VPS Hosting (DigitalOcean)</span>
-                <span className="text-white/90">$24/mo</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-white/70">ngrok Pro (tunneling)</span>
-                <span className="text-white/90">$20/mo</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-white/70">Discord Nitro</span>
-                <span className="text-white/90">$10/mo</span>
-              </div>
-              <div className="pt-3 border-t border-white/10 flex justify-between font-semibold">
-                <span>Total</span>
-                <span className="text-lg">$54/mo</span>
-              </div>
-              <p className="text-white/50 text-xs pt-2">= $648/year</p>
-            </div>
-          </Card>
-          <Card title="RogueGrid9">
-            <div className="space-y-3 text-sm">
-              <div className="flex justify-between">
-                <span className="text-white/70">Direct P2P connections</span>
-                <span className="text-accent">$0/mo</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-white/70">Relay bandwidth (~20GB)</span>
-                <span className="text-white/90">$5/mo</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-white/70">Voice/Video/Chat</span>
-                <span className="text-accent">$0/mo</span>
-              </div>
-              <div className="pt-3 border-t border-white/10 flex justify-between font-semibold">
-                <span>Total</span>
-                <span className="text-lg text-accent">$5/mo</span>
-              </div>
-              <p className="text-accent/80 text-xs pt-2">= $60/year • Save $588/year</p>
-            </div>
-          </Card>
-        </div>
-        <div className="mt-6 text-center">
-          <p className="text-accent font-bold text-2xl flex items-center justify-center gap-2">
-            <DollarSign className="w-7 h-7" />
-            Save 91% annually
-          </p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-white/10">
+                <th className="text-left py-3 px-4 font-semibold">Feature</th>
+                <th className="text-left py-3 px-4 font-semibold">ngrok (Free)</th>
+                <th className="text-left py-3 px-4 font-semibold">ngrok (Pro)</th>
+                <th className="text-left py-3 px-4 font-semibold">Traditional Hosting</th>
+                <th className="text-left py-3 px-4 font-semibold">RogueGrid9 Free</th>
+                <th className="text-left py-3 px-4 font-semibold text-accent">RogueGrid9 Pro</th>
+              </tr>
+            </thead>
+            <tbody className="text-white/70">
+              <tr className="border-b border-white/10">
+                <td className="py-3 px-4">Hosting</td>
+                <td className="py-3 px-4">✗ (temporary only)</td>
+                <td className="py-3 px-4">✓ ($8+/mo)</td>
+                <td className="py-3 px-4">$20–30/mo</td>
+                <td className="py-3 px-4">FREE</td>
+                <td className="py-3 px-4 text-accent">$5/mo</td>
+              </tr>
+              <tr className="border-b border-white/10">
+                <td className="py-3 px-4">P2P Connection</td>
+                <td className="py-3 px-4">✗</td>
+                <td className="py-3 px-4">✗</td>
+                <td className="py-3 px-4">N/A</td>
+                <td className="py-3 px-4">✓</td>
+                <td className="py-3 px-4 text-accent">✓</td>
+              </tr>
+              <tr className="border-b border-white/10">
+                <td className="py-3 px-4">Relay Servers</td>
+                <td className="py-3 px-4">✓ (metered)</td>
+                <td className="py-3 px-4">✓ (higher limits)</td>
+                <td className="py-3 px-4">N/A</td>
+                <td className="py-3 px-4">✗</td>
+                <td className="py-3 px-4 text-accent">✓ (100GB)</td>
+              </tr>
+              <tr className="border-b border-white/10">
+                <td className="py-3 px-4">Custom Domain</td>
+                <td className="py-3 px-4">✗ (random subdomain)</td>
+                <td className="py-3 px-4">✓</td>
+                <td className="py-3 px-4">+$10/mo</td>
+                <td className="py-3 px-4">✗</td>
+                <td className="py-3 px-4 text-accent">✓</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </Section>
 
@@ -187,16 +184,18 @@ export default function Home() {
           <Card>
             <h3 className="font-bold mb-2">Is RogueGrid9 really free?</h3>
             <p className="text-white/70 text-sm">
-              Yes, with nuance: P2P connections between compatible networks are completely FREE. 
-              About 70% of connections work directly without relay. Relay servers cost $5/100GB when needed. 
+              Yes, with nuance: P2P connections between compatible networks are completely FREE.
+              About 70% of connections work directly without relay. Relay servers cost $5/100GB when needed.
+              For perspective, one hour of continuous Minecraft gameplay uses 35-352 MB per hour.
               Most small teams spend $0-10/month total.
             </p>
           </Card>
           <Card>
             <h3 className="font-bold mb-2">When would I need relay servers?</h3>
             <p className="text-white/70 text-sm">
-              You'll need relays when behind corporate firewalls, using symmetric NAT (restrictive routers), 
-              or connecting across certain ISPs. Our app automatically handles this—you don't decide. 
+              You'll need relays when behind corporate firewalls, using symmetric NAT (restrictive routers),
+              or connecting across certain ISPs. Relay servers are also more secure—they prevent direct IP exposure
+              and add an extra layer of protection. Our app automatically handles this—you don't decide.
               You'll see clearly whether you're connected via P2P or relay.
             </p>
           </Card>
